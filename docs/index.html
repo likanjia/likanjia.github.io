@@ -2,22 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>牧羊人的笔记📒</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <!-- 引入 Font Awesome 图标 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<!--  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/LIGMATV/docsify-navbar-fixed/navbar-fixed.css">-->
+  <link rel="stylesheet" href="_static/navbar-fixed.css">
+  <link rel="icon" href="https://docsify.js.org/_media/icon.svg" type="image/x-icon">
+  <!-- 右侧目录 -->
+<!--  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">-->
+  <!--面包屑-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
+  <!-- 侧边栏折叠 箭头 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+
 </head>
 <body>
-  <div id="app"> 加载中.... </div>
+  <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '学习资料',
+      name: '牧羊人的笔记📒',
       repo: '',
-      coverpage: true
+      themeColor: '#ffa502',
+      loadNavbar: true,
+      loadSidebar: true,
+      autoHeader: true,
+      executeScript: true,
+      mergeNavbar: true,
+      auto2top: true,
+      subMaxLevel: 6,
+      maxLevel: 6,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto', // or 'auto'
+        placeholder: '🔍搜索文档',
+        noData: '找不到结果!',
+        // 搜索标题的最大层级, 1 - 6
+        depth: 6,
+        hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+        // 避免搜索索引冲突
+        // 同一域下的多个网站之间
+        namespace: 'website-1',
+        pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
+      },
+      //字数统计
+      count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese'
+      },
+      'flexible-alerts': {
+        style: 'flat'
+      },
+      // tabs
+      tabs: {
+        persist: true, // default
+        sync: true, // default
+        theme: 'classic', // default
+        tabComments: true, // default
+        tabHeadings: true // default
+      },
+      // 文档分页
+      pagination: {
+        previousText: '上一章节',
+        nextText: '下一章节',
+        crossChapter: true,
+        crossChapterText: true,
+      },// 代码复制插件配置（可选，不配置则用默认值）
+      codeCopy: {
+        copyContent: '<i class="fa fa-copy"></i>',       // 自定义按钮文字（带图标）
+        successText: '✅',     // 成功提示
+        errorText: '❌',       // 失败提示
+        tipDuration: 1500,             // 提示显示1.5秒
+      },
+      backToTop:{
+        threshold: 200
+      },
+      //阅读进度条
+      progress: {
+        position: "bottom",
+        color: "var(--theme-color,#42b983)",
+        height: "3px",
+      },
+      sidebarDisplayLevel: 1,
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <!-- 添加emoji插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+<!--  <script src="https://cdn.jsdelivr.net/npm/emoji-js@3.5.0/lib/emoji.min.js"></script>-->
+  <!--  全局搜索 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!--  右侧目录-->
+<!--  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>-->
+  <!--面包屑-->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/index.min.js"></script>
+  <!--  复制到剪贴板 -->
+<!--  <script src="https://unpkg.com/docsify-copy-code@2"></script>-->
+  <!--代码高亮-->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+  <!-- 字数统计 -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <!-- 图片缩放 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <!--美化提醒-->
+  <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+  <!--tabs-->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <!-- wiki式链接 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-wikilink@1"></script>
+  <!-- 文档分页 -->
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- 阅读进度条 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+  <!-- 侧边栏折叠 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <!-- 图片标题 -->
+  <script src="https://unpkg.com/@h-hg/docsify-image-caption/dist/docsify-image-caption.min.js"></script>
+  <script src="_plugins/back-to-top.js"></script>
+  <script src="_plugins/code-copy-plugin.js"></script>
+<!--  <script src="_plugins/docsify-custom-navbar-plugin.js"></script>-->
+
 </body>
 </html>
