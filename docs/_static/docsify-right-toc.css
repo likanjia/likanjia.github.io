@@ -1,0 +1,80 @@
+/* 右侧目录容器核心样式（恢复原边框色 + 高亮无背景 + #ffa502主题色） */
+.right-toc {
+    position: fixed;
+    top: 50%;
+    right: var(--right-toc-gap, 20px);
+    width: var(--right-toc-width, 260px);
+    height: fit-content;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    pointer-events: auto;
+    z-index: 100;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    background-color: #f8fafc; /* 背景色，可保留/修改 */
+    /* 1. 边框优化：全边框 + 自定义粗细/颜色 + 圆角（关键修改） */
+    border: 1px solid #e2e8f0; /* 全边框（替代原仅左侧边框），可调整粗细（1px/2px）和颜色 */
+    border-radius: 8px; /* 圆角边框，更美观；如需直角，改为 0px 即可 */
+    /* 2. 增强阴影：多层阴影 + 自定义模糊/偏移/颜色，提升层次感（关键修改） */
+    box-shadow:
+            0 4px 12px rgba(0, 0, 0, 0.05), /* 底层柔和阴影，增加扩散感 */
+            -2px 0 8px rgba(59, 130, 246, 0.06); /* 右侧突出阴影，贴合右侧固定定位 */
+    transform: translateY(-50%);
+    max-width: calc(100vw - 40px);
+}
+
+/* 目录内容容器 */
+.right-toc-content {
+    box-sizing: border-box;
+}
+
+/* 目录项通用样式 */
+.right-toc-item {
+    list-style: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    margin: 2px 0;
+    border-radius: 4px;
+    transition: color 0.2s ease, font-weight 0.2s ease; /* 仅文字相关过渡 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #636e72; /* 默认文字颜色 */
+}
+
+/* 不同层级标题的缩进（区分层级） */
+.right-toc-item-h1 { padding-left: 0; font-weight: 700; }
+.right-toc-item-h2 { padding-left: 8px; font-weight: 600; }
+.right-toc-item-h3 { padding-left: 16px; font-weight: 500; }
+.right-toc-item-h4 { padding-left: 24px; font-weight: 400; }
+.right-toc-item-h5 { padding-left: 32px; font-weight: 300; }
+.right-toc-item-h6 { padding-left: 40px; font-weight: 200; }
+
+/* 高亮样式：无背景色 + #ffa502 文字色（核心保留） */
+.right-toc-active {
+    background-color: transparent !important; /* 强制透明，无背景色 */
+    color: #ffa502; /* 主题色高亮文字 */
+    font-weight: 600;
+}
+
+/* 悬浮样式：#ffa502 主题色适配（核心保留） */
+.right-toc-item:hover:not(.right-toc-active) {
+    background-color: #ffedd5; /* 浅橙悬浮背景，贴合主题 */
+    color: #ffa502; /* 主题色悬浮文字 */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* 隐藏默认的列表样式 */
+.right-toc-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 文档主体右侧内边距，避免内容被遮挡 */
+#main {
+    /*padding-right: calc(var(--right-toc-width, 260px) + var(--right-toc-gap, 20px) + 20px);*/
+    padding-right: 100px;
+    box-sizing: border-box;
+}

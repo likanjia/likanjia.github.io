@@ -12,12 +12,11 @@
 <!--  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/LIGMATV/docsify-navbar-fixed/navbar-fixed.css">-->
   <link rel="stylesheet" href="_static/navbar-fixed.css">
   <link rel="icon" href="https://docsify.js.org/_media/icon.svg" type="image/x-icon">
-  <!-- 右侧目录 -->
-<!--  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">-->
   <!--面包屑-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
   <!-- 侧边栏折叠 箭头 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+  <link rel="stylesheet" href="_static/docsify-right-toc.css">
 
 </head>
 <body>
@@ -33,8 +32,7 @@
       executeScript: true,
       mergeNavbar: true,
       auto2top: true,
-      subMaxLevel: 6,
-      maxLevel: 6,
+      // subMaxLevel: 6,
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
@@ -101,8 +99,6 @@
 <!--  <script src="https://cdn.jsdelivr.net/npm/emoji-js@3.5.0/lib/emoji.min.js"></script>-->
   <!--  全局搜索 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <!--  右侧目录-->
-<!--  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>-->
   <!--面包屑-->
   <script src="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/index.min.js"></script>
   <!--  复制到剪贴板 -->
@@ -130,6 +126,7 @@
   <script src="https://unpkg.com/@h-hg/docsify-image-caption/dist/docsify-image-caption.min.js"></script>
   <script src="_plugins/back-to-top.js"></script>
   <script src="_plugins/code-copy-plugin.js"></script>
+  <script src="_plugins/docsify-right-toc.js"></script>
 <!--  <script src="_plugins/docsify-custom-navbar-plugin.js"></script>-->
 
 </body>
